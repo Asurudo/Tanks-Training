@@ -12,7 +12,6 @@ public class TankHealth : MonoBehaviour
 
     //ÑªÌõ
     public Slider HPSlider;
-
     private float HPTotal;
 
     void Start()
@@ -26,11 +25,12 @@ public class TankHealth : MonoBehaviour
         
     }
 
-    void TakeDamage()
+
+    public void TakeDamage(float[] damageBoundary)
     {
         if(HP <= 0)
             return ;
-        HP -= Random.Range(10, 20);
+        HP -= Random.Range(damageBoundary[0], damageBoundary[1]);
         HPSlider.value = HP/HPTotal;
         if(HP <= 0)
         {

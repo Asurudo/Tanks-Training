@@ -29,7 +29,10 @@ public class Shell : MonoBehaviour
 
         if(collider.tag == "tank")
         {
-            collider.SendMessage("TakeDamage");
+            float[] message = new float[2];  
+            message[0] = 10;  
+            message[1] = 20;  
+            collider.SendMessage("TakeDamage", message, SendMessageOptions.DontRequireReceiver);
         }
     }
 }

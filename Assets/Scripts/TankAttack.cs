@@ -14,6 +14,11 @@ public class TankAttack : MonoBehaviour
 
     public AudioClip shotAudio;
 
+    //¼ÆÊ±Æ÷
+    private float lastTime;   
+    private float curTime;
+
+
     void Start()
     {
         FirePosition = transform.Find("FirePosition");
@@ -29,5 +34,23 @@ public class TankAttack : MonoBehaviour
             GameObject go = GameObject.Instantiate(shellPrefab, FirePosition.position, FirePosition.rotation) as GameObject;
             go.GetComponent<Rigidbody>().velocity = go.transform.forward * shellSpeed;
         }
+    }
+
+    //´¥·¢¼ì²â
+    public void OnTriggerEnter(Collider collider)
+    {
+        curTime = Time.time;
+        if(curTime - lastTime < 1)
+             return ;
+        lastTime = Time.time; 
+
+        float[] message = new float[2];  
+        message[0] = 2;  
+        message[1] = 5;  
+
+        if(collider.tag == "tank" )
+           collider.SendMessage("TakeDamage", message, SendMessageOptions.DontRequireReceiver);
+        else if(collider.tag == "building")
+            this.GetComponent<TankHealth>().TakeDamage(message);
     }
 }
