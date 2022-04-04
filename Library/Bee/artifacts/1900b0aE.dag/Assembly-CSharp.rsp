@@ -335,6 +335,7 @@
 "Assets/Scripts/TankAttack.cs"
 "Assets/Scripts/TankHealth.cs"
 "Assets/Scripts/TankMovement.cs"
+"Assets/Scripts/TankMovementTeki1.cs"
 -langversion:9.0
 
 /deterministic

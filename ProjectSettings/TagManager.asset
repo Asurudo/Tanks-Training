@@ -6,6 +6,7 @@ TagManager:
   tags:
   - tank
   - building
+  - player
   layers:
   - Default
   - TransparentFX

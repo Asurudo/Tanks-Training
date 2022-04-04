@@ -53,12 +53,16 @@
     <UnityVersion>2021.2.6f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\TankMovement.cs" />
+    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\Scripts\TankAttack.cs" />
-    <Compile Include="Assets\Scripts\Shell.cs" />
     <Compile Include="Assets\Scripts\DestroyForTime.cs" />
-    <Compile Include="Assets\Scripts\TankHealth.cs" />
     <Compile Include="Assets\Scripts\FollowTarget.cs" />
+    <Compile Include="Assets\Scripts\TankHealth.cs" />
+    <Compile Include="Assets\Scripts\Shell.cs" />
+    <Compile Include="Assets\Scripts\TankMovementTeki1.cs" />
+    <Compile Include="Assets\Scripts\TankMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fonts\Bowlby_One\OFL.txt" />

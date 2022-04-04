@@ -28,19 +28,19 @@ public class TankMovement : MonoBehaviour
     void FixedUpdate()
     {
         //垂直 WS键 v = 1|-1
-        float v = Input.GetAxis("Verticalplayer"+number);
+        float v = Input.GetAxis("Verticalplayer" + number);
         rigidbody.velocity = transform.forward * v * speed;
 
         //水平 AD键 h = 1|-1
-        float h = Input.GetAxis("Horizontalplayer"+number);
+        float h = Input.GetAxis("Horizontalplayer" + number);
         //水平旋转速度               绕着y轴
         rigidbody.angularVelocity = transform.up * h * angularSpeeed;
 
-        if(Mathf.Abs(h)>0.1 || Mathf.Abs(v)>0.1)
+        if (Mathf.Abs(h) > 0.1 || Mathf.Abs(v) > 0.1)
             audio.clip = drivingAudio;
         else
             audio.clip = idleAudio;
-        if(audio.isPlaying==false)
+        if (audio.isPlaying == false)
             audio.Play();
 
     }

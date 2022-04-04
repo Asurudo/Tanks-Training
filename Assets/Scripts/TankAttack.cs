@@ -45,12 +45,30 @@ public class TankAttack : MonoBehaviour
         lastTime = Time.time; 
 
         float[] message = new float[2];  
-        message[0] = 2;  
-        message[1] = 5;  
+        message[0] = 10;  
+        message[1] = 20;
 
-        if(collider.tag == "tank" )
-           collider.SendMessage("TakeDamage", message, SendMessageOptions.DontRequireReceiver);
-        else if(collider.tag == "building")
-            this.GetComponent<TankHealth>().TakeDamage(message);
+        float[] message2 = new float[2];
+        message2[0] = 2;
+        message2[1] = 5;
+
+        if (collider.tag == "tank" && this.tag != "tank")
+        { 
+            collider.SendMessage("TakeDamage", message, SendMessageOptions.DontRequireReceiver);
+            collider.SendMessage("Backnow");
+        }
+        if (collider.tag == "player")
+        {
+            collider.SendMessage("TakeDamage", message2, SendMessageOptions.DontRequireReceiver);
+            //this.transform.position -= transform.forward * 1.0f;
+        }
+        else if (collider.tag == "building")
+            this.GetComponent<TankHealth>().TakeDamage(message2);
+    }
+
+    public void OnTriggerStay(Collider collider)
+    {
+        if (collider.tag == "tank" && this.tag != "tank")
+            collider.SendMessage("Backnow");
     }
 }
