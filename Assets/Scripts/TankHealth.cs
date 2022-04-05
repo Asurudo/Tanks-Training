@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class TankHealth : MonoBehaviour
@@ -10,7 +11,7 @@ public class TankHealth : MonoBehaviour
     public GameObject tankExplosion;
     public AudioClip tankExplosionAudio;
 
-    //—™Ãı
+    //Ë°ÄÊù°
     public Slider HPSlider;
     private float HPTotal;
 
@@ -24,8 +25,6 @@ public class TankHealth : MonoBehaviour
     {
         
     }
-
-
     public void TakeDamage(float[] damageBoundary)
     {
         if(HP <= 0)

@@ -505,7 +505,7 @@ GameObject:
   - component: {fileID: 6862515344906159570}
   m_Layer: 0
   m_Name: Tank
-  m_TagString: tank
+  m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -587,7 +587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb0bd0d9fbe819843940efab4cd1e3ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 100
+  HP: 100000
   tankExplosion: {fileID: 151086, guid: ee49a9a8678ecf8468eb488e1ac8d42b, type: 3}
   tankExplosionAudio: {fileID: 8300000, guid: 5c27182a28a7eb942a362e6d198fe0e6, type: 3}
   HPSlider: {fileID: 6928086385433871004}

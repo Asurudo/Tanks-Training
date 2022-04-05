@@ -333,9 +333,11 @@
 "Assets/Scripts/FollowTarget.cs"
 "Assets/Scripts/Shell.cs"
 "Assets/Scripts/TankAttack.cs"
+"Assets/Scripts/TankAttack2.cs"
 "Assets/Scripts/TankHealth.cs"
 "Assets/Scripts/TankMovement.cs"
 "Assets/Scripts/TankMovementTeki1.cs"
+"Assets/Scripts/TankMovementTeki2.cs"
 -langversion:9.0
 
 /deterministic

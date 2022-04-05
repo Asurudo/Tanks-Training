@@ -9,6 +9,7 @@ public class Shell : MonoBehaviour
 
     public AudioClip shellExplositionAudio;
 
+    public int fromwhere;
     void Start()
     {
         
@@ -27,7 +28,7 @@ public class Shell : MonoBehaviour
         GameObject.Instantiate(shellExplositionPrefab, transform.position, transform.rotation);
         GameObject.Destroy(this.gameObject);
 
-        if(collider.tag == "tank")
+        if(collider.tag == "player" || fromwhere==1 && collider.tag == "tank")
         {
             float[] message = new float[2];  
             message[0] = 10;  

@@ -42,7 +42,7 @@ public class TankMovementTeki1 : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (playerObject == null)
+        if (playerObject == null || this == null)
             return;
         agent.destination = GivemeTheFinalDest(playerObject.transform.position);
 
@@ -51,10 +51,12 @@ public class TankMovementTeki1 : MonoBehaviour
         if (ad.isPlaying == false)
             ad.Play();
     }
-
+    
     void Backnow()
     {
         Vector3 rnt = new Vector3(0, 0, 0);
+        if (playerObject == null || this == null)
+            return;
         agent.destination = rnt;
     }
 }

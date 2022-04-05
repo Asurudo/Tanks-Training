@@ -261,13 +261,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1824612358245419043}
   - component: {fileID: 5075238046917184374}
-  - component: {fileID: 8715741831636368044}
   - component: {fileID: 651888381190739799}
   - component: {fileID: 3010293512802937138}
   - component: {fileID: 2467469536370993047}
   - component: {fileID: 8731388138021043072}
-  - component: {fileID: 8731388138021043075}
   - component: {fileID: 7445484955886050564}
+  - component: {fileID: 2390749756605302444}
+  - component: {fileID: 8690922409468437569}
   m_Layer: 0
   m_Name: TankTeki2
   m_TagString: tank
@@ -308,22 +308,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.7153025, y: 1.96, z: 2.3688555}
   m_Center: {x: 0.011290073, y: 0.98, z: -0.08309406}
---- !u!114 &8715741831636368044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824612358245717443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1450b13d738c1414a92c2f7be468dc70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shellPrefab: {fileID: 8118421196234424272, guid: 704e5c57575ccde44842bfdf084970cd, type: 3}
-  fireKey: 0
-  shellSpeed: 0
-  shotAudio: {fileID: 0}
 --- !u!114 &651888381190739799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,11 +442,11 @@ NavMeshAgent:
   m_GameObject: {fileID: 1824612358245717443}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 5
-  m_Acceleration: 5
-  avoidancePriority: 99
-  m_AngularSpeed: 60
+  m_Radius: 0.1
+  m_Speed: 20
+  m_Acceleration: 20
+  avoidancePriority: 10
+  m_AngularSpeed: 360
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -471,22 +455,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &8731388138021043075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824612358245717443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4707bdbd9cee9784ea173ae771bfd291, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  angularSpeeed: 0
-  idleAudio: {fileID: 0}
-  drivingAudio: {fileID: 0}
 --- !u!54 &7445484955886050564
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -495,14 +463,47 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1824612358245717443}
   serializedVersion: 2
-  m_Mass: 5
+  m_Mass: 1
   m_Drag: 100
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &2390749756605302444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824612358245717443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93a955a4c88bd9c44aa28aae4f352819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  angularSpeeed: 0
+  idleAudio: {fileID: 8300000, guid: 4932ab25b84dd7649b80af68a9660ddc, type: 3}
+  drivingAudio: {fileID: 8300000, guid: d7ca9fb5aa30155449192b23d7fb3336, type: 3}
+--- !u!114 &8690922409468437569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824612358245717443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed01f58bfe52d624988a457180ff3ef3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shellPrefab: {fileID: 8118421196234424272, guid: 704e5c57575ccde44842bfdf084970cd, type: 3}
+  fireKey: 0
+  shellSpeed: 16
+  shotAudio: {fileID: 8300000, guid: 672a9941361ad494a99fba36759eca80, type: 3}
+  attackgapTime: 1
 --- !u!1 &1824612358245717445
 GameObject:
   m_ObjectHideFlags: 0

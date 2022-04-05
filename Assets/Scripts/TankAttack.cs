@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankAttack : MonoBehaviour
+public class TankAttack: MonoBehaviour
 {
     //¿ª»ðÎ»ÖÃ
     private Transform FirePosition;
@@ -21,7 +21,7 @@ public class TankAttack : MonoBehaviour
 
     void Start()
     {
-        FirePosition = transform.Find("FirePosition");
+        FirePosition = this.transform.Find("FirePosition");
     }
 
     
@@ -32,6 +32,7 @@ public class TankAttack : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(shotAudio, transform.position);
             GameObject go = GameObject.Instantiate(shellPrefab, FirePosition.position, FirePosition.rotation) as GameObject;
+            go.GetComponent<Shell>().fromwhere = 1;
             go.GetComponent<Rigidbody>().velocity = go.transform.forward * shellSpeed;
         }
     }
@@ -57,7 +58,7 @@ public class TankAttack : MonoBehaviour
             collider.SendMessage("TakeDamage", message, SendMessageOptions.DontRequireReceiver);
             collider.SendMessage("Backnow");
         }
-        if (collider.tag == "player")
+        else if (collider.tag == "player")
         {
             collider.SendMessage("TakeDamage", message2, SendMessageOptions.DontRequireReceiver);
             //this.transform.position -= transform.forward * 1.0f;
@@ -68,6 +69,8 @@ public class TankAttack : MonoBehaviour
 
     public void OnTriggerStay(Collider collider)
     {
+        if (collider == null)
+            return ;
         if (collider.tag == "tank" && this.tag != "tank")
             collider.SendMessage("Backnow");
     }

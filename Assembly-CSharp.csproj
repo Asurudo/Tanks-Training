@@ -57,11 +57,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\TankAttack.cs" />
+    <Compile Include="Assets\Scripts\TankMovementTeki1.cs" />
     <Compile Include="Assets\Scripts\DestroyForTime.cs" />
     <Compile Include="Assets\Scripts\FollowTarget.cs" />
     <Compile Include="Assets\Scripts\TankHealth.cs" />
+    <Compile Include="Assets\Scripts\TankAttack2.cs" />
     <Compile Include="Assets\Scripts\Shell.cs" />
-    <Compile Include="Assets\Scripts\TankMovementTeki1.cs" />
+    <Compile Include="Assets\Scripts\TankMovementTeki2.cs" />
     <Compile Include="Assets\Scripts\TankMovement.cs" />
   </ItemGroup>
   <ItemGroup>
