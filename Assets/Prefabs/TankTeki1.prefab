@@ -95,13 +95,13 @@ GameObject:
   m_Component:
   - component: {fileID: 133021410267446674}
   - component: {fileID: 6837619943233126087}
-  - component: {fileID: 6953078462490873629}
   - component: {fileID: 1261355368090870502}
   - component: {fileID: 3552340656180075651}
   - component: {fileID: 4230273651057824294}
   - component: {fileID: 7036551442438491697}
   - component: {fileID: 7036551442438491698}
   - component: {fileID: 7036551442438491700}
+  - component: {fileID: -7317229663461504554}
   m_Layer: 0
   m_Name: TankTeki1
   m_TagString: tank
@@ -142,22 +142,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.7153025, y: 1.96, z: 2.3688555}
   m_Center: {x: 0.011290073, y: 0.98, z: -0.08309406}
---- !u!114 &6953078462490873629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 133021410267537522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1450b13d738c1414a92c2f7be468dc70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shellPrefab: {fileID: 8118421196234424272, guid: 704e5c57575ccde44842bfdf084970cd, type: 3}
-  fireKey: 0
-  shellSpeed: 0
-  shotAudio: {fileID: 0}
 --- !u!114 &1261355368090870502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,6 +156,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 100
   tankExplosion: {fileID: 151086, guid: ee49a9a8678ecf8468eb488e1ac8d42b, type: 3}
+  drop1: {fileID: 6547618270512457027, guid: 74224b1c21c062b4aae85ecca9a598d4, type: 3}
+  drop2: {fileID: 8101654559118877739, guid: 0d30b96cdc765d5499c5aa5646f82f58, type: 3}
   tankExplosionAudio: {fileID: 8300000, guid: 5c27182a28a7eb942a362e6d198fe0e6, type: 3}
   HPSlider: {fileID: 6874534280945272904}
 --- !u!65 &3552340656180075651
@@ -337,6 +323,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &-7317229663461504554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133021410267537522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33a3c785246573741bc30f5f1073aa02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shellPrefab: {fileID: 0}
+  fireKey: 0
+  shellSpeed: 10
+  shotAudio: {fileID: 0}
 --- !u!1 &133021410267537524
 GameObject:
   m_ObjectHideFlags: 0

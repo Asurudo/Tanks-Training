@@ -66,6 +66,9 @@
     <Compile Include="Assets\Scripts\StageControl.cs" />
     <Compile Include="Assets\Scripts\TankMovementTeki2.cs" />
     <Compile Include="Assets\Scripts\TankMovement.cs" />
+    <Compile Include="Assets\Scripts\TankAttack1.cs" />
+    <Compile Include="Assets\Scripts\Freeze.cs" />
+    <Compile Include="Assets\Scripts\Muteki.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fonts\Bowlby_One\OFL.txt" />

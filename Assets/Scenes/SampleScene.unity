@@ -618,9 +618,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   liveteki: 0
-  gapTime: 3000
+  gapTime: 30
   TankTeki1: {fileID: 133021410267537522, guid: 5eafe15a5573f024b91c0c2472c3ff57, type: 3}
   TankTeki2: {fileID: 1824612358245717443, guid: 688c0f2c027d7e24992c6fcd69e8c1e6, type: 3}
+  freezeTime: 5
+  freezedis: 30
+  mutekiTime: 5
 --- !u!4 &902219421 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4511013743940843334, guid: f5be526a29cf1c044acaf62afdd84e90, type: 3}
@@ -798,6 +801,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3369815514030942258, guid: f5be526a29cf1c044acaf62afdd84e90, type: 3}
+      propertyPath: drop
+      value: 
+      objectReference: {fileID: 6547618270512457027, guid: 74224b1c21c062b4aae85ecca9a598d4, type: 3}
     - target: {fileID: 4261408059546983509, guid: f5be526a29cf1c044acaf62afdd84e90, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

@@ -9,6 +9,8 @@ public class TankHealth : MonoBehaviour
     
     public float HP;
     public GameObject tankExplosion;
+    public GameObject drop1;
+    public GameObject drop2;
     public AudioClip tankExplosionAudio;
 
     //血条
@@ -39,6 +41,12 @@ public class TankHealth : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(tankExplosionAudio, transform.position);
             GameObject.Instantiate(tankExplosion, transform.position + Vector3.up, transform.rotation);
+
+            int chs = Random.RandomRange(0,100);
+            if(chs < 30)
+                GameObject.Instantiate(drop1, transform.position + Vector3.up, Quaternion.identity);
+            else if(chs > 50)
+                GameObject.Instantiate(drop2, transform.position + Vector3.up, Quaternion.identity);
             GameObject.Destroy(this.gameObject);
             GM.GetComponent<StageControl>().liveteki--;
         }

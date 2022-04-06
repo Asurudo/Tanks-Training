@@ -3,7 +3,12 @@ guid: cb0bd0d9fbe819843940efab4cd1e3ab
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - tankExplosion: {instanceID: 0}
+  - drop1: {fileID: 6547618270512457027, guid: 74224b1c21c062b4aae85ecca9a598d4, type: 3}
+  - drop2: {fileID: 8101654559118877739, guid: 0d30b96cdc765d5499c5aa5646f82f58, type: 3}
+  - tankExplosionAudio: {instanceID: 0}
+  - HPSlider: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

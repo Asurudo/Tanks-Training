@@ -19,6 +19,7 @@ public class TankAttack: MonoBehaviour
     private float curTime;
 
 
+
     void Start()
     {
         FirePosition = this.transform.Find("FirePosition");
@@ -54,7 +55,7 @@ public class TankAttack: MonoBehaviour
         message2[1] = 5;
 
         if (collider.tag == "tank" && this.tag != "tank")
-        { 
+        {
             collider.SendMessage("TakeDamage", message, SendMessageOptions.DontRequireReceiver);
             collider.SendMessage("Backnow");
         }

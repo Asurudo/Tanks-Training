@@ -322,6 +322,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 100
   tankExplosion: {fileID: 151086, guid: ee49a9a8678ecf8468eb488e1ac8d42b, type: 3}
+  drop1: {fileID: 6547618270512457027, guid: 74224b1c21c062b4aae85ecca9a598d4, type: 3}
+  drop2: {fileID: 8101654559118877739, guid: 0d30b96cdc765d5499c5aa5646f82f58, type: 3}
   tankExplosionAudio: {fileID: 8300000, guid: 5c27182a28a7eb942a362e6d198fe0e6, type: 3}
   HPSlider: {fileID: 5182945531705409017}
 --- !u!65 &3010293512802937138
