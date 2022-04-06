@@ -14,34 +14,34 @@ public class TankMovement : MonoBehaviour
     public AudioClip idleAudio;
     public AudioClip drivingAudio;
 
-    private AudioSource audio;
+    private AudioSource runningaudio;
 
     //获取刚体组件
-    private Rigidbody rigidbody;
+    private Rigidbody objrigidbody;
 
     void Start()
     {
-        rigidbody = this.GetComponent<Rigidbody>();
-        audio = this.GetComponent<AudioSource>();
+        objrigidbody = this.GetComponent<Rigidbody>();
+        runningaudio = this.GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
     {
         //垂直 WS键 v = 1|-1
         float v = Input.GetAxis("Verticalplayer" + number);
-        rigidbody.velocity = transform.forward * v * speed;
+        objrigidbody.velocity = transform.forward * v * speed;
 
         //水平 AD键 h = 1|-1
         float h = Input.GetAxis("Horizontalplayer" + number);
         //水平旋转速度               绕着y轴
-        rigidbody.angularVelocity = transform.up * h * angularSpeeed;
+        objrigidbody.angularVelocity = transform.up * h * angularSpeeed;
 
         if (Mathf.Abs(h) > 0.1 || Mathf.Abs(v) > 0.1)
-            audio.clip = drivingAudio;
+            runningaudio.clip = drivingAudio;
         else
-            audio.clip = idleAudio;
-        if (audio.isPlaying == false)
-            audio.Play();
+            runningaudio.clip = idleAudio;
+        if (runningaudio.isPlaying == false)
+            runningaudio.Play();
 
     }
 }

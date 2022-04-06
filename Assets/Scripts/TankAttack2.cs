@@ -66,7 +66,6 @@ public class TankAttack2 : MonoBehaviour
         else if (collider.tag == "player")
         {
             collider.SendMessage("TakeDamage", message2, SendMessageOptions.DontRequireReceiver);
-            //this.transform.position -= transform.forward * 1.0f;
         }
         else if (collider.tag == "building")
             this.GetComponent<TankHealth>().TakeDamage(message2);

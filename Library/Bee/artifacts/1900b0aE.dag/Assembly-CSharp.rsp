@@ -332,6 +332,7 @@
 "Assets/Scripts/DestroyForTime.cs"
 "Assets/Scripts/FollowTarget.cs"
 "Assets/Scripts/Shell.cs"
+"Assets/Scripts/StageControl.cs"
 "Assets/Scripts/TankAttack.cs"
 "Assets/Scripts/TankAttack2.cs"
 "Assets/Scripts/TankHealth.cs"

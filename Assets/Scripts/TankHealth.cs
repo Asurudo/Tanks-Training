@@ -15,9 +15,13 @@ public class TankHealth : MonoBehaviour
     public Slider HPSlider;
     private float HPTotal;
 
+    //获取主控
+    private GameObject GM;
+
     void Start()
     {
         HPTotal = HP;
+        GM = GameObject.Find("GameManager");
     }
 
     
@@ -36,6 +40,7 @@ public class TankHealth : MonoBehaviour
             AudioSource.PlayClipAtPoint(tankExplosionAudio, transform.position);
             GameObject.Instantiate(tankExplosion, transform.position + Vector3.up, transform.rotation);
             GameObject.Destroy(this.gameObject);
+            GM.GetComponent<StageControl>().liveteki--;
         }
     }
 }

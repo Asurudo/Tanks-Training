@@ -68,22 +68,9 @@ public class TankMovementTeki2 : MonoBehaviour
             }
         }
         else if (Vector3.Distance(this.transform.position, playerObject.transform.position) > 17.0f && Vector3.Distance(this.transform.position, playerObject.transform.position) < 22.0f)
-        {
             agent.destination = this.transform.position + 0.1f*(playerObject.transform.position - this.transform.position);
-        }
         else if (Vector3.Distance(this.transform.position, playerObject.transform.position) > 22.0f)
-        {
             agent.destination = playerObject.transform.position;
-            //agent.destination = GivemeTheFinalDest(playerObject.transform.position);
-        }
-        /*
-        int times = 5;
-        while (Vector3.Distance(agent.destination, playerObject.transform.position) < Vector3.Distance(agent.destination, this.transform.position) && times > 0)
-        { 
-            agent.destination = GivemeTheFinalDest(playerObject.transform.position); 
-            times --;
-        }
-        */
 
 
         ad.clip = drivingAudio;

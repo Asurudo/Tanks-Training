@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\TankHealth.cs" />
     <Compile Include="Assets\Scripts\TankAttack2.cs" />
     <Compile Include="Assets\Scripts\Shell.cs" />
+    <Compile Include="Assets\Scripts\StageControl.cs" />
     <Compile Include="Assets\Scripts\TankMovementTeki2.cs" />
     <Compile Include="Assets\Scripts\TankMovement.cs" />
   </ItemGroup>
