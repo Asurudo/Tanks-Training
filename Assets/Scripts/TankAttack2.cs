@@ -19,26 +19,26 @@ public class TankAttack2 : MonoBehaviour
     private float trrigercurTime;
 
     private float attacklastTime;
-    private float attackcurTime;
     public float attackgapTime;
     void Start()
     {
         FirePosition = this.transform.Find("FirePosition");
         attackgapTime = 1.0f;
+        attacklastTime = Time.time;
     }
 
     
     void Update()
     {
-        attackcurTime = Time.time;
-        if (attackcurTime - attacklastTime < attackgapTime)
-            return;
+        //attackcurTime = Time.time;
+        //if (attackcurTime - attacklastTime < attackgapTime)
+        //    return;
 
-        attacklastTime = Time.time;
-        AudioSource.PlayClipAtPoint(shotAudio, this.transform.position);
-        GameObject go = GameObject.Instantiate(shellPrefab, FirePosition.position, FirePosition.rotation) as GameObject;
-        go.GetComponent<Shell>().fromwhere = 2;
-        go.GetComponent<Rigidbody>().velocity = go.transform.forward * shellSpeed;
+        //attacklastTime = Time.time;
+        //AudioSource.PlayClipAtPoint(shotAudio, this.transform.position);
+        //GameObject go = GameObject.Instantiate(shellPrefab, FirePosition.position, FirePosition.rotation) as GameObject;
+        //go.GetComponent<Shell>().fromwhere = 2;
+        //go.GetComponent<Rigidbody>().velocity = go.transform.forward * shellSpeed;
         
     }
 
@@ -69,6 +69,19 @@ public class TankAttack2 : MonoBehaviour
         }
         else if (collider.tag == "building")
             this.GetComponent<TankHealth>().TakeDamage(message2);
+    }
+
+    void Fire()
+    {
+        if (Time.time - attacklastTime < attackgapTime)
+            return;
+
+        attacklastTime = Time.time;
+
+        AudioSource.PlayClipAtPoint(shotAudio, this.transform.position);
+        GameObject go = GameObject.Instantiate(shellPrefab, FirePosition.position, FirePosition.rotation) as GameObject;
+        go.GetComponent<Shell>().fromwhere = 2;
+        go.GetComponent<Rigidbody>().velocity = go.transform.forward * shellSpeed;
     }
 
 }

@@ -66,7 +66,6 @@ public class TankAttack1: MonoBehaviour
         else if (collider.tag == "building")
             this.GetComponent<TankHealth>().TakeDamage(message2);
     }
-
     public void OnTriggerStay(Collider collider)
     {
         if (collider == null)

@@ -622,7 +622,7 @@ MonoBehaviour:
   TankTeki1: {fileID: 133021410267537522, guid: 5eafe15a5573f024b91c0c2472c3ff57, type: 3}
   TankTeki2: {fileID: 1824612358245717443, guid: 688c0f2c027d7e24992c6fcd69e8c1e6, type: 3}
   freezeTime: 5
-  freezedis: 30
+  freezedis: 15
   mutekiTime: 5
 --- !u!4 &902219421 stripped
 Transform:

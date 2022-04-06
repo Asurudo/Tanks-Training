@@ -42,7 +42,7 @@ public class TankHealth : MonoBehaviour
             AudioSource.PlayClipAtPoint(tankExplosionAudio, transform.position);
             GameObject.Instantiate(tankExplosion, transform.position + Vector3.up, transform.rotation);
 
-            int chs = Random.RandomRange(0,100);
+            int chs = Random.Range(0,100);
             if(chs < 30)
                 GameObject.Instantiate(drop1, transform.position + Vector3.up, Quaternion.identity);
             else if(chs > 50)

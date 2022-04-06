@@ -50,9 +50,7 @@ public class StageControl : MonoBehaviour
     {
         stage = liveteki = freezenow = 0;
         curTime = Time.time;
-        freezedis = 10;
         lastTime = curTime - gapTime + 1;
-        freezeTime = 3;
         playerObject = GameObject.Find("Tank1");
     }
 
@@ -64,7 +62,6 @@ public class StageControl : MonoBehaviour
         if (mutekinow == 1 && Time.time - mutekistartTime > mutekiTime)
             unmuteki();
         curTime = Time.time;
-        Debug.Log(liveteki);
         if (curTime - lastTime < gapTime && liveteki != 0)
             return;
         lastTime = Time.time;
@@ -201,9 +198,10 @@ public class StageControl : MonoBehaviour
                 //存下标
                 Teki1index.Add(i);
                 Teki1[i].GetComponent<NavMeshAgent>().enabled = false;
+                Teki1[i].GetComponent<TankMovementTeki1>().enabled = false;
             }
         }
-
+        
         //遍历所有teki2
         for (int i = 0; i < Teki2.Count; i++)
         {
@@ -216,6 +214,7 @@ public class StageControl : MonoBehaviour
                 Teki2index.Add(i);
                 Teki2[i].GetComponent<NavMeshAgent>().enabled = false;
                 Teki2[i].GetComponent<TankAttack2>().enabled = false;
+                Teki2[i].GetComponent<TankMovementTeki2>().enabled = false;
             }
         }
         
@@ -241,13 +240,17 @@ public class StageControl : MonoBehaviour
         freezenow = 0;
         for (int i = 0; i < Teki1index.Count; i++)
             if(Teki1[Teki1index[i]] != null)
+            { 
                 Teki1[Teki1index[i]].GetComponent<NavMeshAgent>().enabled = true;
+                Teki1[i].GetComponent<TankMovementTeki1>().enabled = true;
+            }
         for (int i = 0; i < Teki2index.Count; i++)
         {
             if (Teki2[Teki2index[i]] == null)
                 continue;
             Teki2[Teki2index[i]].GetComponent<NavMeshAgent>().enabled = true;
             Teki2[Teki2index[i]].GetComponent<TankAttack2>().enabled = true;
+            Teki2[Teki2index[i]].GetComponent<TankMovementTeki2>().enabled = true;
         }
         Teki1index.Clear();
         Teki2index.Clear();

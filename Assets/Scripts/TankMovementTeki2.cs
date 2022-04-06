@@ -27,6 +27,8 @@ public class TankMovementTeki2 : MonoBehaviour
     private float lastTime;
     private float curTime;
 
+    private int haverandomharukadis;
+
     void Start()
     {
         rigidbd = this.GetComponent<Rigidbody>();
@@ -40,7 +42,7 @@ public class TankMovementTeki2 : MonoBehaviour
     private Vector3 GivemeTheFinalDest(Vector3 oriposition)
     {
         Vector3 rnt = new Vector3(0, 0, 0);
-        float r = (float)System.Math.Sqrt(Random.Range(25.0f, 484.0f));
+        float r = (float)System.Math.Sqrt(Random.Range(500.0f, 800.0f));
         rnt.x = oriposition.x + r * (float)System.Math.Cos(Random.Range(0, 2 * 3.1415f));
         rnt.z = oriposition.z + r * (float)System.Math.Sin(Random.Range(0, 2 * 3.1415f));
         return rnt;
@@ -51,27 +53,19 @@ public class TankMovementTeki2 : MonoBehaviour
         if (playerObject == null || this == null)
             return;
 
-        if (Vector3.Distance(this.transform.position, playerObject.transform.position) < 15.0f)
+        float distance = Vector3.Distance(this.transform.position, playerObject.transform.position);
+        if (distance > 15.0f)
         {
-            curTime = Time.time;
-            if (curTime - lastTime < 2.0)
-                return;
-            lastTime = Time.time;
-
-            agent.destination = GivemeTheFinalDest(playerObject.transform.position);
-            
-            int times = 10;
-            while (Vector3.Distance(agent.destination, playerObject.transform.position) < Vector3.Distance(agent.destination, this.transform.position) && times > 0)
-            {
-                agent.destination = GivemeTheFinalDest(playerObject.transform.position);
-                times--;
-            }
-        }
-        else if (Vector3.Distance(this.transform.position, playerObject.transform.position) > 17.0f && Vector3.Distance(this.transform.position, playerObject.transform.position) < 22.0f)
-            agent.destination = this.transform.position + 0.1f*(playerObject.transform.position - this.transform.position);
-        else if (Vector3.Distance(this.transform.position, playerObject.transform.position) > 22.0f)
+            haverandomharukadis = 0;
+            this.GetComponent<NavMeshAgent>().enabled = true;
             agent.destination = playerObject.transform.position;
-
+        }
+        else if (distance < 15.0f)
+        {
+            this.transform.forward = playerObject.transform.position - this.transform.position;
+            this.GetComponent<NavMeshAgent>().enabled = false;
+            this.SendMessage("Fire", SendMessageOptions.DontRequireReceiver);
+        }
 
         ad.clip = drivingAudio;
 

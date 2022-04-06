@@ -57,6 +57,6 @@ public class TankMovementTeki1 : MonoBehaviour
         Vector3 rnt = new Vector3(0, 0, 0);
         if (playerObject == null || this == null)
             return;
-        agent.destination = rnt;
+        //agent.destination = rnt;
     }
 }

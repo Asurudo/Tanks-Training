@@ -21,5 +21,6 @@ public class Freeze : MonoBehaviour
             GM.SendMessage("freezefunc", SendMessageOptions.DontRequireReceiver);
             GameObject.Destroy(this.gameObject);
         }
+
     }
 }
