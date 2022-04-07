@@ -16,6 +16,9 @@ public class Freeze : MonoBehaviour
     // Update is called once per frame
     public void OnTriggerEnter(Collider collider)
     {
+        if (this.gameObject == null)
+            return;
+        
         if (collider.tag == "player")
         {
             GM.SendMessage("freezefunc", SendMessageOptions.DontRequireReceiver);

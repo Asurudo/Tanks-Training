@@ -27,8 +27,6 @@ public class TankMovementTeki2 : MonoBehaviour
     private float lastTime;
     private float curTime;
 
-    private int haverandomharukadis;
-
     void Start()
     {
         rigidbd = this.GetComponent<Rigidbody>();
@@ -56,7 +54,6 @@ public class TankMovementTeki2 : MonoBehaviour
         float distance = Vector3.Distance(this.transform.position, playerObject.transform.position);
         if (distance > 15.0f)
         {
-            haverandomharukadis = 0;
             this.GetComponent<NavMeshAgent>().enabled = true;
             agent.destination = playerObject.transform.position;
         }

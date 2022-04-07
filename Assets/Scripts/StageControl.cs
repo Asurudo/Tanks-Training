@@ -52,11 +52,13 @@ public class StageControl : MonoBehaviour
         curTime = Time.time;
         lastTime = curTime - gapTime + 1;
         playerObject = GameObject.Find("Tank1");
+        mutekiHP = playerObject.GetComponent<TankHealth>().HP;
     }
 
     // Update is called once per frame
     void Update()
     {
+        mutekiHP = System.Math.Min(mutekiHP, playerObject.GetComponent<TankHealth>().HP);
         if (freezenow == 1 && Time.time - freezestartTime > freezeTime)
             unfreeze();
         if (mutekinow == 1 && Time.time - mutekistartTime > mutekiTime)
@@ -222,11 +224,9 @@ public class StageControl : MonoBehaviour
 
     void mutekifunc()
     {
-        mutekiTime = Time.time;
+        mutekistartTime = Time.time;
         mutekinow = 1;
-        mutekiHP = playerObject.GetComponent<TankHealth>().HP;
         playerObject.GetComponent<TankHealth>().HP = 100000;
-
     }
 
     void unmuteki()
@@ -242,7 +242,7 @@ public class StageControl : MonoBehaviour
             if(Teki1[Teki1index[i]] != null)
             { 
                 Teki1[Teki1index[i]].GetComponent<NavMeshAgent>().enabled = true;
-                Teki1[i].GetComponent<TankMovementTeki1>().enabled = true;
+                Teki1[Teki1index[i]].GetComponent<TankMovementTeki1>().enabled = true;
             }
         for (int i = 0; i < Teki2index.Count; i++)
         {
@@ -253,6 +253,6 @@ public class StageControl : MonoBehaviour
             Teki2[Teki2index[i]].GetComponent<TankMovementTeki2>().enabled = true;
         }
         Teki1index.Clear();
-        Teki2index.Clear();
+        Teki2index.Clear(); 
     }
 }
