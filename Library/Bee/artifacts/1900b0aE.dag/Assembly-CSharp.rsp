@@ -336,12 +336,17 @@
 "Assets/Scripts/Shell.cs"
 "Assets/Scripts/StageControl.cs"
 "Assets/Scripts/TankAttack.cs"
-"Assets/Scripts/TankAttack1.cs"
-"Assets/Scripts/TankAttack2.cs"
+"Assets/Scripts/TankAttackTeki1.cs"
+"Assets/Scripts/TankAttackTeki2.cs"
 "Assets/Scripts/TankHealth.cs"
 "Assets/Scripts/TankMovement.cs"
 "Assets/Scripts/TankMovementTeki1.cs"
 "Assets/Scripts/TankMovementTeki2.cs"
+"Assets/Scripts/_dropMono.cs"
+"Assets/Scripts/_TankAttack.cs"
+"Assets/Scripts/_TankAttackTeki.cs"
+"Assets/Scripts/_TankMovement.cs"
+"Assets/Scripts/_TankMovementTeki.cs"
 -langversion:9.0
 
 /deterministic

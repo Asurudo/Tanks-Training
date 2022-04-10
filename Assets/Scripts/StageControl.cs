@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 /*
+    GetComponentInChildren
     stage1: 1 - teki1; 1 - teki2
     stage2: 2 - teki1; 1 - teki2
     stage3: 2 - teki1; 2 - teki2: speed up
@@ -106,14 +107,14 @@ public class StageControl : MonoBehaviour
             GameObject teki21 = GameObject.Instantiate(TankTeki2, randomPosition, playerObject.transform.rotation) as GameObject;
             teki21.GetComponent<NavMeshAgent>().speed += 5;
             teki21.GetComponent<NavMeshAgent>().acceleration += 5;
-            teki21.GetComponent<TankAttack2>().attackgapTime -= 0.2f;
+            teki21.GetComponent<TankAttackTeki2>().tankAttackGapTime -= 0.2f;
             Teki2.Add(teki21);
 
             randomPosition = new Vector3(Random.Range(-25, 25), 0, Random.Range(-25, 25));
             GameObject teki22 = GameObject.Instantiate(TankTeki2, randomPosition, playerObject.transform.rotation) as GameObject;
             teki22.GetComponent<NavMeshAgent>().speed += 5;
             teki22.GetComponent<NavMeshAgent>().acceleration += 5;
-            teki22.GetComponent<TankAttack2>().attackgapTime -= 0.2f;
+            teki22.GetComponent<TankAttackTeki2>().tankAttackGapTime -= 0.2f;
             Teki2.Add(teki22);
         }
         else if (stage == 4)
@@ -133,14 +134,14 @@ public class StageControl : MonoBehaviour
             GameObject teki21 = GameObject.Instantiate(TankTeki2, randomPosition, playerObject.transform.rotation) as GameObject;
             teki21.GetComponent<NavMeshAgent>().speed += 5;
             teki21.GetComponent<NavMeshAgent>().acceleration += 5;
-            teki21.GetComponent<TankAttack2>().attackgapTime -= 0.2f;
+            teki21.GetComponent<TankAttackTeki2>().tankAttackGapTime -= 0.2f;
             Teki2.Add(teki21);
 
             randomPosition = new Vector3(Random.Range(-25, 25), 0, Random.Range(-25, 25));
             GameObject teki22 = GameObject.Instantiate(TankTeki2, randomPosition, playerObject.transform.rotation) as GameObject;
             teki22.GetComponent<NavMeshAgent>().speed += 5;
             teki22.GetComponent<NavMeshAgent>().acceleration += 5;
-            teki22.GetComponent<TankAttack2>().attackgapTime -= 0.2f;
+            teki22.GetComponent<TankAttackTeki2>().tankAttackGapTime -= 0.2f;
             Teki2.Add(teki22);
         }
         else if (stage == 5)
@@ -160,24 +161,24 @@ public class StageControl : MonoBehaviour
             GameObject teki21 = GameObject.Instantiate(TankTeki2, randomPosition, playerObject.transform.rotation) as GameObject;
             teki21.GetComponent<NavMeshAgent>().speed += 10;
             teki21.GetComponent<NavMeshAgent>().acceleration += 10;
-            teki21.GetComponent<TankAttack2>().attackgapTime -= 0.4f;
+            teki21.GetComponent<TankAttackTeki2>().tankAttackGapTime -= 0.4f;
             Teki2.Add(teki21);
 
             randomPosition = new Vector3(Random.Range(-25, 25), 0, Random.Range(-25, 25));
             GameObject teki22 = GameObject.Instantiate(TankTeki2, randomPosition, playerObject.transform.rotation) as GameObject;
             teki22.GetComponent<NavMeshAgent>().speed += 10;
             teki22.GetComponent<NavMeshAgent>().acceleration += 10;
-            teki22.GetComponent<TankAttack2>().attackgapTime -= 0.4f;
+            teki22.GetComponent<TankAttackTeki2>().tankAttackGapTime -= 0.4f;
             Teki2.Add(teki22);
 
             randomPosition = new Vector3(Random.Range(-25, 25), 0, Random.Range(-25, 25));
             GameObject teki23 = GameObject.Instantiate(TankTeki2, randomPosition, playerObject.transform.rotation) as GameObject;
             teki23.GetComponent<NavMeshAgent>().speed += 10;
             teki23.GetComponent<NavMeshAgent>().acceleration += 10;
-            teki23.GetComponent<TankAttack2>().attackgapTime -= 0.4f;
+            teki23.GetComponent<TankAttackTeki2>().tankAttackGapTime -= 0.4f;
             Teki2.Add(teki23);
         }
-        else 
+        else if(stage >= 6 && liveteki!=0)
         {
             Debug.Log("Game Over!");
         }
@@ -215,7 +216,7 @@ public class StageControl : MonoBehaviour
                 //´æÏÂ±ê
                 Teki2index.Add(i);
                 Teki2[i].GetComponent<NavMeshAgent>().enabled = false;
-                Teki2[i].GetComponent<TankAttack2>().enabled = false;
+                Teki2[i].GetComponent<TankAttackTeki2>().enabled = false;
                 Teki2[i].GetComponent<TankMovementTeki2>().enabled = false;
             }
         }
@@ -249,7 +250,7 @@ public class StageControl : MonoBehaviour
             if (Teki2[Teki2index[i]] == null)
                 continue;
             Teki2[Teki2index[i]].GetComponent<NavMeshAgent>().enabled = true;
-            Teki2[Teki2index[i]].GetComponent<TankAttack2>().enabled = true;
+            Teki2[Teki2index[i]].GetComponent<TankAttackTeki2>().enabled = true;
             Teki2[Teki2index[i]].GetComponent<TankMovementTeki2>().enabled = true;
         }
         Teki1index.Clear();

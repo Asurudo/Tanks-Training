@@ -60,15 +60,20 @@
     <Compile Include="Assets\Scripts\TankMovementTeki1.cs" />
     <Compile Include="Assets\Scripts\DestroyForTime.cs" />
     <Compile Include="Assets\Scripts\FollowTarget.cs" />
-    <Compile Include="Assets\Scripts\TankAttack1.cs" />
+    <Compile Include="Assets\Scripts\TankAttackTeki1.cs" />
     <Compile Include="Assets\Scripts\TankHealth.cs" />
-    <Compile Include="Assets\Scripts\TankAttack2.cs" />
+    <Compile Include="Assets\Scripts\TankAttackTeki2.cs" />
     <Compile Include="Assets\Scripts\Shell.cs" />
     <Compile Include="Assets\Scripts\StageControl.cs" />
     <Compile Include="Assets\Scripts\TankMovementTeki2.cs" />
     <Compile Include="Assets\Scripts\Freeze.cs" />
     <Compile Include="Assets\Scripts\Muteki.cs" />
     <Compile Include="Assets\Scripts\TankMovement.cs" />
+    <Compile Include="Assets\Scripts\_TankMovement.cs" />
+    <Compile Include="Assets\Scripts\_TankMovementTeki.cs" />
+    <Compile Include="Assets\Scripts\_TankAttack.cs" />
+    <Compile Include="Assets\Scripts\_TankAttackTeki.cs" />
+    <Compile Include="Assets\Scripts\_dropMono.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fonts\Bowlby_One\OFL.txt" />

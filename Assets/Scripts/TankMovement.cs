@@ -2,46 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankMovement : MonoBehaviour
+public class TankMovement : _TankMovement
 {
-    //行进速度一秒五米    
-    public float speed;
-    //旋转速度一秒三十度
-    public float angularSpeeed;
-    //坦克编号
-    public float number;
+    public override void tankRunning()
+    {
+        //垂直 WS键 v = 1|-1
+        float v = Input.GetAxis("Vertical");
+        tankRigidbody.velocity = transform.forward * v * tankSpeed;
 
-    public AudioClip idleAudio;
-    public AudioClip drivingAudio;
+        //水平 AD键 h = 1|-1
+        float h = Input.GetAxis("Horizontal");
+        //水平旋转速度                   绕着y轴
+        tankRigidbody.angularVelocity = transform.up * h * tankAngularSpeeed;
 
-    private AudioSource runningaudio;
-
-    //获取刚体组件
-    private Rigidbody objrigidbody;
+        if (Mathf.Abs(h) > 0.1 || Mathf.Abs(v) > 0.1)
+            tankRunningAudio.clip = tankDrivingAudio;
+        else
+            tankRunningAudio.clip = tankIdleAudio;
+        if (tankRunningAudio.isPlaying == false)
+            tankRunningAudio.Play();
+    }
 
     void Start()
     {
-        objrigidbody = this.GetComponent<Rigidbody>();
-        runningaudio = this.GetComponent<AudioSource>();
+        tankMovementStart();
     }
 
     void FixedUpdate()
     {
-        //垂直 WS键 v = 1|-1
-        float v = Input.GetAxis("Verticalplayer" + number);
-        objrigidbody.velocity = transform.forward * v * speed;
-
-        //水平 AD键 h = 1|-1
-        float h = Input.GetAxis("Horizontalplayer" + number);
-        //水平旋转速度               绕着y轴
-        objrigidbody.angularVelocity = transform.up * h * angularSpeeed;
-
-        if (Mathf.Abs(h) > 0.1 || Mathf.Abs(v) > 0.1)
-            runningaudio.clip = drivingAudio;
-        else
-            runningaudio.clip = idleAudio;
-        if (runningaudio.isPlaying == false)
-            runningaudio.Play();
-
+        tankRunning();
     }
 }

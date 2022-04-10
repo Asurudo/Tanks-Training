@@ -303,10 +303,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4707bdbd9cee9784ea173ae771bfd291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  angularSpeeed: 0
-  idleAudio: {fileID: 0}
-  drivingAudio: {fileID: 0}
+  tankSpeed: 0
+  tankAngularSpeeed: 0
+  tankIdleAudio: {fileID: 8300000, guid: 4932ab25b84dd7649b80af68a9660ddc, type: 3}
+  tankDrivingAudio: {fileID: 8300000, guid: d7ca9fb5aa30155449192b23d7fb3336, type: 3}
 --- !u!54 &7036551442438491700
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -336,9 +336,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shellPrefab: {fileID: 0}
-  fireKey: 0
-  shellSpeed: 10
-  shotAudio: {fileID: 0}
+  tankshellSpeed: 0
+  tankFireKey: 0
+  tankShotAudio: {fileID: 0}
 --- !u!1 &133021410267537524
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,7 +839,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4558418378056335161}
   m_Layer: 0
-  m_Name: FirePosition
+  m_Name: tankFirePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

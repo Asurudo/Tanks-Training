@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 458520045}
   m_Layer: 0
-  m_Name: FirePosition
+  m_Name: tankFirePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -572,9 +572,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shellPrefab: {fileID: 8118421196234424272, guid: 704e5c57575ccde44842bfdf084970cd, type: 3}
-  fireKey: 32
-  shellSpeed: 16
-  shotAudio: {fileID: 8300000, guid: 672a9941361ad494a99fba36759eca80, type: 3}
+  tankshellSpeed: 20
+  tankFireKey: 32
+  tankShotAudio: {fileID: 8300000, guid: 672a9941361ad494a99fba36759eca80, type: 3}
 --- !u!114 &3369815514030942258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -714,11 +714,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb28a512906ab542bbc51f46c102add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  angularSpeeed: 10
-  number: 1
-  idleAudio: {fileID: 8300000, guid: 4932ab25b84dd7649b80af68a9660ddc, type: 3}
-  drivingAudio: {fileID: 8300000, guid: d7ca9fb5aa30155449192b23d7fb3336, type: 3}
+  tankSpeed: 10
+  tankAngularSpeeed: 360
+  tankIdleAudio: {fileID: 8300000, guid: 4932ab25b84dd7649b80af68a9660ddc, type: 3}
+  tankDrivingAudio: {fileID: 8300000, guid: d7ca9fb5aa30155449192b23d7fb3336, type: 3}
 --- !u!1 &4511013743940348586
 GameObject:
   m_ObjectHideFlags: 0

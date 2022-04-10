@@ -2,28 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Freeze : MonoBehaviour
+public class Freeze : _dropMono
 {
-    //»ñÈ¡Ö÷¿Ø
-    private GameObject GM;
-
-    // Start is called before the first frame update
     void Start()
     {
-        GM = GameObject.Find("GameManager");
+        dropMonoStart();
     }
 
-    // Update is called once per frame
     public void OnTriggerEnter(Collider collider)
     {
-        if (this.gameObject == null)
-            return;
-        
-        if (collider.tag == "player")
-        {
-            GM.SendMessage("freezefunc", SendMessageOptions.DontRequireReceiver);
-            GameObject.Destroy(this.gameObject);
-        }
-
+        pickUp(collider, "freezefunc");
     }
 }

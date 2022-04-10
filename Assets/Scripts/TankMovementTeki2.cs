@@ -3,50 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class TankMovementTeki2 : MonoBehaviour
+public class TankMovementTeki2 : _TankMovementTeki
 {
-    //行进速度一秒五米    
-    public float speed;
-    //旋转速度一秒三十度
-    public float angularSpeeed;
-
-    public AudioClip idleAudio;
-    public AudioClip drivingAudio;
-
-    private AudioSource ad;
-
-    //获取刚体组件
-    private Rigidbody rigidbd;
-
-    //获取玩家
-    private GameObject playerObject;
-
-    private NavMeshAgent agent;
-
-    //计时器
-    private float lastTime;
-    private float curTime;
-
-    void Start()
-    {
-        rigidbd = this.GetComponent<Rigidbody>();
-        ad = this.GetComponent<AudioSource>();
-        playerObject = GameObject.Find("Tank1");
-        agent = GetComponent<NavMeshAgent>();
-        curTime = Time.time;
-        lastTime = curTime - 2;
-    }
-
-    private Vector3 GivemeTheFinalDest(Vector3 oriposition)
-    {
-        Vector3 rnt = new Vector3(0, 0, 0);
-        float r = (float)System.Math.Sqrt(Random.Range(500.0f, 800.0f));
-        rnt.x = oriposition.x + r * (float)System.Math.Cos(Random.Range(0, 2 * 3.1415f));
-        rnt.z = oriposition.z + r * (float)System.Math.Sin(Random.Range(0, 2 * 3.1415f));
-        return rnt;
-    }
-
-    void FixedUpdate()
+    public override void tankRunning()
     {
         if (playerObject == null || this == null)
             return;
@@ -55,23 +14,29 @@ public class TankMovementTeki2 : MonoBehaviour
         if (distance > 15.0f)
         {
             this.GetComponent<NavMeshAgent>().enabled = true;
-            agent.destination = playerObject.transform.position;
+            tankAgent.destination = playerObject.transform.position;
         }
         else if (distance < 15.0f)
         {
             this.transform.forward = playerObject.transform.position - this.transform.position;
             this.GetComponent<NavMeshAgent>().enabled = false;
-            this.SendMessage("Fire", SendMessageOptions.DontRequireReceiver);
+            this.SendMessage("tankFire", SendMessageOptions.DontRequireReceiver);
         }
 
-        ad.clip = drivingAudio;
+        tankRunningAudio.clip = tankDrivingAudio;
 
-        if (ad.isPlaying == false)
-            ad.Play();
+        if (tankRunningAudio.isPlaying == false)
+            tankRunningAudio.Play();
     }
 
-    void Backnow()
-    {
 
+    void Start()
+    {
+        tankMovementTekiStart();
+    }
+
+    void FixedUpdate()
+    {
+        tankRunning();
     }
 }

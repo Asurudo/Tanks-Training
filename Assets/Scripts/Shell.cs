@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Shell : MonoBehaviour
 {
-        
     public GameObject shellExplositionPrefab;
-
     public AudioClip shellExplositionAudio;
 
     public int fromwhere;
