@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shellPrefab: {fileID: 8118421196234424272, guid: 704e5c57575ccde44842bfdf084970cd, type: 3}
-  tankshellSpeed: 10
+  tankshellSpeed: 15
   tankFireKey: 0
   tankShotAudio: {fileID: 8300000, guid: 672a9941361ad494a99fba36759eca80, type: 3}
   tankAttackGapTime: 1

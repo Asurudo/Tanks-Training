@@ -11,6 +11,6 @@ public class Freeze : _dropMono
 
     public void OnTriggerEnter(Collider collider)
     {
-        pickUp(collider, "freezefunc");
+        pickUp(collider, "freezeFunc");
     }
 }

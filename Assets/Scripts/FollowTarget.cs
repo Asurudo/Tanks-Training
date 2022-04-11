@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class FollowTarget : MonoBehaviour
 {
-    
-    public Transform player;
+    public Transform playerTransform;
 
-    private Vector3 offset;
-    private Camera cam;
+    private Vector3 cameraOffset;
+    private Camera mainCamera;
 
     void Start()
     {
-        offset = transform.position - player.position;
-        cam = this.GetComponent<Camera>();
+        //获取一开始摄像机的偏移量
+        cameraOffset = transform.position - playerTransform.position;
+        mainCamera = this.GetComponent<Camera>();
     }
 
     
     void Update()
     {
-        //一方被销毁
-        if(player == null)
+        //玩家被销毁
+        if(playerTransform == null)
             return ;
-        transform.position = player.position  + offset;
-        cam.orthographicSize = 15.0F;
+        transform.position = playerTransform.position + cameraOffset;
+        mainCamera.orthographicSize = 15.0F;
     }
 }

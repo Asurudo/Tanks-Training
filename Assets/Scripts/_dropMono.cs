@@ -11,7 +11,8 @@ public abstract class _dropMono : MonoBehaviour
     {
         GM = GameObject.Find("GameManager");
     }
-
+    
+    //如果碰撞的是玩家，则捡起物品
     protected void pickUp(Collider collider, string callBackFunc)
     {
         if (collider.tag == "player")

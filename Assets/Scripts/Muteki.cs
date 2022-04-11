@@ -11,6 +11,6 @@ public class Muteki : _dropMono
 
     public void OnTriggerEnter(Collider collider)
     {
-        pickUp(collider, "mutekifunc");
+        pickUp(collider, "mutekiFunc");
     }
 }

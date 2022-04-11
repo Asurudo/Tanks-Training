@@ -9,7 +9,7 @@ public class TankMovementTeki1 : _TankMovementTeki
     {
         if (playerObject == null || this == null)
             return;
-        tankAgent.destination = GivemeTheFinalDest(playerObject.transform.position);
+        tankAgent.destination = GivemeTheFinalDest(playerObject.transform.position, 2.0f, 6.0f);
 
         tankRunningAudio.clip = tankDrivingAudio;
 

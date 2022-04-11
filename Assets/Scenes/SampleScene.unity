@@ -617,13 +617,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa21eace468289a4cac7f41124b76d37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  liveteki: 0
-  gapTime: 30
-  TankTeki1: {fileID: 133021410267537522, guid: 5eafe15a5573f024b91c0c2472c3ff57, type: 3}
-  TankTeki2: {fileID: 1824612358245717443, guid: 688c0f2c027d7e24992c6fcd69e8c1e6, type: 3}
-  freezeTime: 5
-  freezedis: 15
-  mutekiTime: 5
+  liveTeki: 0
+  stageGapTime: 30
+  tankTeki1: {fileID: 133021410267537522, guid: 5eafe15a5573f024b91c0c2472c3ff57, type: 3}
+  tankTeki2: {fileID: 1824612358245717443, guid: 688c0f2c027d7e24992c6fcd69e8c1e6, type: 3}
+  freezeLastingTime: 5
+  freezeDistance: 15
+  mutekiLastingTime: 5
+  goldMaterial:
+  - {fileID: 2100000, guid: 6221f2fbc7212d94cb9c069ee262d824, type: 2}
+  - {fileID: 2100000, guid: 6221f2fbc7212d94cb9c069ee262d824, type: 2}
+  redMaterial:
+  - {fileID: 2100000, guid: 463052f3f7389124f9e7b34b0b931d0d, type: 2}
+  - {fileID: 2100000, guid: 463052f3f7389124f9e7b34b0b931d0d, type: 2}
 --- !u!4 &902219421 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4511013743940843334, guid: f5be526a29cf1c044acaf62afdd84e90, type: 3}
@@ -718,7 +724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf1328078eff80d48a2163595b9cb869, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 902219421}
+  playerTransform: {fileID: 902219421}
 --- !u!81 &963194230
 AudioListener:
   m_ObjectHideFlags: 0
@@ -809,6 +815,42 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4511013743938418128, guid: f5be526a29cf1c044acaf62afdd84e90, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511013743938418128, guid: f5be526a29cf1c044acaf62afdd84e90, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 463052f3f7389124f9e7b34b0b931d0d, type: 2}
+    - target: {fileID: 4511013743938418132, guid: f5be526a29cf1c044acaf62afdd84e90, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511013743938418132, guid: f5be526a29cf1c044acaf62afdd84e90, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 463052f3f7389124f9e7b34b0b931d0d, type: 2}
+    - target: {fileID: 4511013743938418134, guid: f5be526a29cf1c044acaf62afdd84e90, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511013743938418134, guid: f5be526a29cf1c044acaf62afdd84e90, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 463052f3f7389124f9e7b34b0b931d0d, type: 2}
+    - target: {fileID: 4511013743938418134, guid: f5be526a29cf1c044acaf62afdd84e90, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 463052f3f7389124f9e7b34b0b931d0d, type: 2}
+    - target: {fileID: 4511013743938418142, guid: f5be526a29cf1c044acaf62afdd84e90, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511013743938418142, guid: f5be526a29cf1c044acaf62afdd84e90, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 463052f3f7389124f9e7b34b0b931d0d, type: 2}
     - target: {fileID: 4511013743940348582, guid: f5be526a29cf1c044acaf62afdd84e90, type: 3}
       propertyPath: m_Name
       value: Tank1

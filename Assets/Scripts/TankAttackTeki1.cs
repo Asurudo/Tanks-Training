@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TankAttackTeki1: _TankAttackTeki
 {
+    //一类敌人不开炮
     public override void tankFire()
     {
         ;
@@ -19,7 +20,6 @@ public class TankAttackTeki1: _TankAttackTeki
         
     }
 
-    //触发检测
     public void OnTriggerEnter(Collider collider)
     {
         tankCollision(collider);

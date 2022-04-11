@@ -9,13 +9,16 @@ public class TankMovementTeki2 : _TankMovementTeki
     {
         if (playerObject == null || this == null)
             return;
-
+        
+        //获取敌人与玩家的距离
         float distance = Vector3.Distance(this.transform.position, playerObject.transform.position);
+        //如果距离过大，则将目的地坐标设置为玩家位置
         if (distance > 15.0f)
         {
             this.GetComponent<NavMeshAgent>().enabled = true;
             tankAgent.destination = playerObject.transform.position;
         }
+        //否则将炮头对准玩家，停下后开火
         else if (distance < 15.0f)
         {
             this.transform.forward = playerObject.transform.position - this.transform.position;
